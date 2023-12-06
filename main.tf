@@ -33,14 +33,7 @@ module "s3"{
   bucket_name                  = "mybucketeks10"
   dynamodb_name                = "dynamo_db_table"
 }
-module "z_backend"  {
-source                       = "./modules/z_backend"
-bucket_name                  = "mybucketeks10"
-dynamodb_name                = "dynamo_db_table" 
-region                       = "ap-south-1"
-statefile_path               = "eks/terraform.tfstate"
 
-}
 module "provider"{
   source                      = "./modules/provider"
   region                       = "ap-south-1"
