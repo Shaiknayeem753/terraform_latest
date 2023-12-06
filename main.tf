@@ -29,7 +29,7 @@ module "vpc" {
 
 }
 module "s3"{
-  source                       = "./modules/s3"
+  source                       = "s3"
   bucket_name                  = "mybucketeks10"
   dynamodb_name                = "dynamo_db_table"
 }
@@ -38,4 +38,5 @@ module "provider"{
   source                      = "./modules/provider"
   region                       = "ap-south-1"
 }
-  
+
+
