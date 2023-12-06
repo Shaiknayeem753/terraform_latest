@@ -79,7 +79,7 @@ resource "aws_iam_role" "eks_role" {
 POLICY
 }
 
-resource "aws_iam_role_policy_attachment" "my_cluster-AmazonEKSClusterPolicy" {
+resource "aws_iam_role_policy_attachment" "eks_role-AmazonEKSClusterPolicy" {
   policy_arn = "arn:aws:iam::aws:policy/AmazonEKSClusterPolicy"
   role       = aws_iam_role.eks_role.name
 }
