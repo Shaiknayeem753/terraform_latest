@@ -43,6 +43,6 @@ statefile_path               = "eks/terraform.tfstate"
 }
 module "provider"{
   source                      = "./modules/provider"
-  /*region                       = "ap-south-1"*/
+  region                       = "ap-south-1"
 }
   
