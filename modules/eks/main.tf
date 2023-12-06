@@ -19,7 +19,7 @@ resource "aws_eks_cluster" "my_cluster" {
 resource "aws_eks_node_group" "my_node" {
   cluster_name    = aws_eks_cluster.my_cluster.name
   node_group_name = var.node_group_name
-  node_role_arn   = aws_iam_role.onlinetest2.arn
+  node_role_arn   = aws_iam_role.my_role_two.arn
   subnet_ids      = var.aws_public_subnet
   instance_types  = var.instance_types
 
