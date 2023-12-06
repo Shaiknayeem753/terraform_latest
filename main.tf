@@ -36,7 +36,7 @@ module "s3"{
 module "z_backend"  {
 source                       = "./modules/z_backend"
 bucket_name                  = "mybucketeks10"
-dynamodb_name                = "dynamo_db_table"
+dynamodb_name                = "dynamo_db_table" 
 region                       = "ap-south-1"
 statefile_path               = "eks/terraform.tfstate"
 
