@@ -81,7 +81,7 @@ POLICY
 
 resource "aws_iam_role_policy_attachment" "my_cluster-AmazonEKSClusterPolicy" {
   policy_arn = "arn:aws:iam::aws:policy/AmazonEKSClusterPolicy"
-  role       = aws_iam_role.onlinetest.name
+  role       = aws_iam_role.eks_role.name
 }
 
 # Optionally, enable Security Groups for Pods
@@ -108,15 +108,15 @@ resource "aws_iam_role" "my_role_two" {
 
 resource "aws_iam_role_policy_attachment" "my_node-AmazonEKSWorkerNodePolicy" {
   policy_arn = "arn:aws:iam::aws:policy/AmazonEKSWorkerNodePolicy"
-  role       = aws_iam_role.onlinetest2.name
+  role       = aws_iam_role.my_role_two.name
 }
 
 resource "aws_iam_role_policy_attachment" "my_node-AmazonEKS_CNI_Policy" {
   policy_arn = "arn:aws:iam::aws:policy/AmazonEKS_CNI_Policy"
-  role       = aws_iam_role.onlinetest2.name
+  role       = aws_iam_role.my_role_two.name
 }
 
 resource "aws_iam_role_policy_attachment" "my_node-AmazonEC2ContainerRegistryReadOnly" {
   policy_arn = "arn:aws:iam::aws:policy/AmazonEC2ContainerRegistryReadOnly"
-  role       = aws_iam_role.onlinetest2.name
+  role       = aws_iam_role.my_role_two.name
 }
