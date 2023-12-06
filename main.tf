@@ -28,8 +28,8 @@ module "vpc" {
   rt_route_cidr_block     = "0.0.0.0/0"
 
 }
-modules "s3"{
-  source                       = "/modules/s3"
+module "s3"{
+  source                       = "./modules/s3"
   bucket_name                  = "mybucketeks10"
   dynamodb_name                = "dynamo_db_table"
 }
